@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentasi Bazar 8 Mei 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f9fafb;
+            font-family: 'Arial', sans-serif;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .modal-content {
+            background-color: #ffffff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .btn-primary {
+            background-color: #4f46e5;
+            color: #ffffff;
+        }
+        .btn-primary:hover {
+            background-color: #4338ca;
+        }
+        .section-title {
+            color: #4f46e5;
+        }
+        
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #4e47cf;
+            transition: background-color 0.3s;
+        }
+        
+        .active {
+            border-bottom: 2px solid #ffffff;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+    <!-- Header -->
+    <header class="bg-gray-900 text-white p-6 text-center">
+        <h1 class="text-4xl font-bold mb-2">Dokumentasi Bazar</h1>
+        <p class="text-lg">8 Mei 2025 - Produk Unggulan</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky-nav p-4">
+        <ul class="flex justify-center space-x-6">
+            <li><a href="#produk" class="hover:underline nav-link">Produk Kami</a></li>
+            <li><a href="#testimonials" class="hover:underline nav-link">Testimonial</a></li>
+            <li><a href="#gallery" class="hover:underline nav-link">Galeri</a></li>
+            <li><a href="#contact" class="hover:underline nav-link">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- Weekly Insights Style Section -->
+    <section class="bg-black text-white py-12 px-4 md:px-20">
+        <div class="text-center">
+            <h2 class="text-3xl font-bold mb-6">WEEKLY INSIGHTS</h2>
+            <p class="max-w-2xl mx-auto mb-8">
+                Berikut ini adalah dokumentasi produk-produk yang kami jual saat acara Bazar tanggal 8 Mei 2025. Terima kasih kepada semua yang sudah mendukung!
+            </p>
+        </div>
+    </section>
+
+    <!-- Produk Section -->
+    <section id="produk" class="bg-white py-12 px-4 md:px-20">
+        <h2 class="section-title text-3xl font-bold text-center mb-10">Produk Kami</h2>
+        <div class="grid gap-10 md:grid-cols-3">
+            <!-- Card 1 -->
+            <div class="bg-gray-100 p-6 rounded-xl shadow-lg card cursor-pointer" data-product="Milo Cheese Silky Pudding" data-price="Rp6.000" data-description="Puding lembut dengan rasa milo dan topping keju creamy, cocok disantap dingin!" data-image="https://source.unsplash.com/300x200/?pudding" onclick="openModal(this)">
+                <img src="img/EsMilo.png" alt="Milo Cheese Silky Pudding" class="rounded-md mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-semibold mb-2">Milo Cheese Silky Pudding</h3>
+                <p class="font-bold text-green-600">Rp6.000</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-gray-100 p-6 rounded-xl shadow-lg card cursor-pointer" data-product="Es Teh Jumbo" data-price="Rp3.000" data-description="Minuman segar ukuran jumbo, manis pas, cocok untuk cuaca panas saat bazar." data-image="https://source.unsplash.com/300x200/?tea" onclick="openModal(this)">
+                <img src="img/EsJumbo.png" alt="Es Teh Jumbo" class="rounded-md mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-semibold mb-2">Es Teh Jumbo</h3>
+                <p class="font-bold text-green-600">Rp3.000</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-gray-100 p-6 rounded-xl shadow-lg card cursor-pointer" data-product="Cireng Kuah" data-price="Rp5.000" data-description="Cireng hangat dengan kuah pedas gurih, bikin nagih dan cocok buat semua kalangan." data-image="https://source.unsplash.com/300x200/?snack" onclick="openModal(this)">
+                <img src="img/CirengKuah.png" alt="Cireng Kuah" class="rounded-md mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-semibold mb-2">Cireng Kuah</h3>
+                <p class="font-bold text-green-600">Rp5.000</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section id="testimonials" class="bg-gray-100 py-12 px-4 md:px-20">
+        <h2 class="section-title text-3xl font-bold text-center mb-10">Testimonial</h2>
+        <div class="max-w-2xl mx-auto">
+            <blockquote class="bg-white p-6 rounded-lg shadow-lg mb-6">
+                <p class="italic">"Produk yang dijual sangat enak dan berkualitas! Saya pasti akan datang lagi di bazar berikutnya!"</p>
+                <footer class="mt-4 text-right">- Pak Andi</footer>
+            </blockquote>
+            <blockquote class="bg-white p-6 rounded-lg shadow-lg">
+                <p class="italic">"Pengalaman yang luar biasa! Semua produk sangat memuaskan."</p>
+                <footer class="mt-4 text-right">Ginanjar</footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="bg-white py-12 px-4 md:px-20">
+        <h2 class="section-title text-3xl font-bold text-center mb-10">Galeri</h2>
+        <div class="grid gap-10 md:grid-cols-3">
+            <img src="img/dokumentasi1.jpg" alt="Galeri 1" class="rounded-lg shadow-lg">
+            <img src="img/Menu.png" alt="Galeri 2" class="rounded-lg shadow-lg">
+            <img src="img/dokumentasi3.jpg" alt="Galeri 3" class="rounded-lg shadow-lg">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-100 py-12 px-4 md:px-20">
+        <h2 class="section-title text-3xl font-bold text-center mb-10">Kontak Kami</h2>
+        <div class="max-w-2xl mx-auto">
+            <form id="contactForm" action="https://formspree.io/f/xldbvlva" method="POST" class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-semibold mb-2">Nama</label>
+                    <input type="text" id="name" name="name" required class="w-full p-2 border border-gray-300 rounded">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-semibold mb-2">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full p-2 border border-gray-300 rounded">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-sm font-semibold mb-2">Pesan</label>
+                    <textarea id="message" name="message" rows="4" required class="w-full p-2 border border-gray-300 rounded"></textarea>
+                </div>
+                <button type="submit" class="btn-primary py-2 px-4 rounded">Kirim</button>
+            </form>
+            <div id="notification" class="hidden mt-4 text-center text-green-600"></div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="bg-white py-6">
+        <h2 class="section-title text-3xl font-bold text-center mb-4">Media Sosial Kami</h2>
+        <div class="flex justify-center space-x-6">
+            <a href="https://github.com/XelsEngginer" target="_blank" class="text-gray-800 hover:text-gray-600">
+                <i class="fab fa-github fa-2x"></i>
+            </a>
+            <a href="https://www.instagram.com/xels.idc" target="_blank" class="text-gray-800 hover:text-gray-600">
+                <i class="fab fa-instagram fa-2x"></i>
+            </a>
+            <a href="https://discord.gg/NZxup4B7ss" target="_blank" class="text-gray-800 hover:text-gray-600">
+                <i class="fab fa-discord fa-2x"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalProductImage" class="modal-image" src="" alt="">
+            <h2 id="modalProductName" class="text-xl font-bold mb-2"></h2>
+            <p id="modalProductDescription" class="mb-4"></p>
+            <p id="modalProductPrice" class="font-bold text-green-600"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center p-6 mt-12">
+        <p>&copy; 2025 Dokumentasi Bazar oleh Xelocity</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Highlight active link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Open modal for product details
+        function openModal(card) {
+            const productName = card.getAttribute('data-product');
+            const productDescription = card.getAttribute('data-description');
+            const productPrice = card.getAttribute('data-price');
+            const productImage = card.getAttribute('data-image');
+
+            document.getElementById('modalProductName').innerText = productName;
+            document.getElementById('modalProductDescription').innerText = productDescription;
+            document.getElementById('modalProductPrice').innerText = productPrice;
+            document.getElementById('modalProductImage').src = productImage;
+
+            document.getElementById('productModal').style.display = 'block';
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('productModal').style.display = 'none';
+        }
+
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('notification').innerText = 'Pesan Anda telah dikirim!';
+                    document.getElementById('notification').classList.remove('hidden');
+                    this.reset();
+                } else {
+                    document.getElementById('notification').innerText = 'Terjadi kesalahan, silakan coba lagi.';
+                    document.getElementById('notification').classList.remove('hidden');
+                }
+            }).catch(error => {
+                document.getElementById('notification').innerText = 'Terjadi kesalahan, silakan coba lagi.';
+                document.getElementById('notification').classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
